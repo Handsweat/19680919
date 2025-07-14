@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Forgotten War: Low-Intensity Conflict in Korea, 1966-1969</title>
+    <title>잊혀진 전쟁: 1966-1969년 한국의 저강도 분쟁</title>
     <style>
-        /* Basic CSS for layout and readability */
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f4; color: #333; }
+        /* CSS 스타일은 이전과 동일 */
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; margin: 0; padding: 20px; background-color: #f4f4f4; color: #333; }
         .container { max-width: 900px; margin: auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
         .header { border-bottom: 2px solid #004488; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .header h1 { margin: 0; color: #004488; }
-        .lang-switcher button { padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f8f8; cursor: pointer; }
+        .header h1 { margin: 0; color: #004488; font-size: 1.8em; }
+        .lang-switcher button { padding: 8px 12px; border: 1px solid #ddd; background-color: #f8f8f8; cursor: pointer; border-radius: 5px; }
         .lang-switcher button.active { background-color: #004488; color: white; border-color: #004488; }
         h2 { color: #005a9e; }
-        .audio-section, .content-section, .legacy-section { margin-bottom: 30px; }
+        .audio-section, .content-section, .legacy-section, .document-section { margin-bottom: 30px; }
         audio { width: 100%; margin-top: 10px; }
         .footer { text-align: center; margin-top: 30px; font-size: 0.9em; color: #777; }
         .hidden { display: none; }
+        .document-link { display: inline-block; padding: 10px 15px; background-color: #004488; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .document-link:hover { background-color: #005a9e; }
     </style>
 </head>
 
@@ -27,10 +29,10 @@
         <!-- KOREAN CONTENT -->
         <div id="ko-content">
             <header class="header">
-                <h1>이친 전쟁: 1966-1969년 한국의 저강도 분쟁</h1>
+                <h1>잊혀진 전쟁: 1966-1969년 한국의 저강도 분쟁</h1>
                 <div class="lang-switcher">
-                    <button class="active" onclick="switchLang('ko')">한국어</button>
-                    <button onclick="switchLang('en')">English</button>
+                    <button id="ko-btn" class="active" onclick="switchLang('ko')">한국어</button>
+                    <button id="en-btn" onclick="switchLang('en')">English</button>
                 </div>
             </header>
 
@@ -40,10 +42,10 @@
 
             <section class="audio-section">
                 <h2>오디오로 듣는 이야기</h2>
-                <p>버튼을 클릭하여 '이친 전쟁'의 전체 이야기를 들어보세요.</p>
-                <!-- NOTE: Replace '#' with the actual paths to your audio files -->
-                <audio controls id="ko-audio-player" src="[PATH_TO_KOREAN_AUDIO_FILE.mp3]">
-                    Your browser does not support the audio element.
+                <p>버튼을 클릭하여 '잊혀진 전쟁'의 전체 이야기를 들어보세요.</p>
+                <!-- 오디오 파일 경로를 실제 GitHub 경로로 수정해야 합니다 -->
+                <audio controls src="[YOUR_GITHUB_REPO_URL]/korean_audio.mp3">
+                    브라우저가 오디오 재생을 지원하지 않습니다.
                 </audio>
             </section>
 
@@ -61,12 +63,8 @@
 
             <section class="legacy-section">
                 <h2>이 전쟁이 남긴 것</h2>
-                <p>제2차 한국 분쟁은 한미 동맹의 승리로 끝났습니다. 북한의 저강도 전쟁 전략은 실패했고, 대한민국은 이 시련을 통해 자체 방위 역량을 비약적으로 발전시켰습니다. 이 '이친 전쟁'은 압도적인 화력이 아닌, 정교한 전략과 동맹의 신뢰, 그리고 국가를 지키려는 국민적 의지가 어떻게 승리를 이끌어내는지를 보여주는 중요한 역사적 교훈을 남겼습니다.</p>
+                <p>제2차 한국 분쟁은 한미 동맹의 승리로 끝났습니다. 북한의 저강도 전쟁 전략은 실패했고, 대한민국은 이 시련을 통해 자체 방위 역량을 비약적으로 발전시켰습니다. 이 '잊혀진 전쟁'은 압도적인 화력이 아닌, 정교한 전략과 동맹의 신뢰, 그리고 국가를 지키려는 국민적 의지가 어떻게 승리를 이끌어내는지를 보여주는 중요한 역사적 교훈을 남겼습니다.</p>
             </section>
-
-            <footer class="footer">
-                <p>자료 출처: Leavenworth Papers No. 19, "Scenes from an Unfinished War: Low-Intensity Conflict in Korea, 1966-1969" by Major Daniel P. Bolger.</p>
-            </footer>
         </div>
 
         <!-- ENGLISH CONTENT -->
@@ -74,8 +72,8 @@
             <header class="header">
                 <h1>The Forgotten War: Low-Intensity Conflict in Korea, 1966-1969</h1>
                 <div class="lang-switcher">
-                    <button onclick="switchLang('ko')">한국어</button>
-                    <button class="active" onclick="switchLang('en')">English</button>
+                    <button id="ko-btn-en" onclick="switchLang('ko')">한국어</button>
+                    <button id="en-btn-en" class="active" onclick="switchLang('en')">English</button>
                 </div>
             </header>
 
@@ -86,8 +84,8 @@
             <section class="audio-section">
                 <h2>Listen to the Story</h2>
                 <p>Click the button to listen to the full narrative of "The Forgotten War."</p>
-                <!-- NOTE: Replace '#' with the actual paths to your audio files -->
-                <audio controls id="en-audio-player" src="[PATH_TO_ENGLISH_AUDIO_FILE.mp3]">
+                <!-- 오디오 파일 경로를 실제 GitHub 경로로 수정해야 합니다 -->
+                <audio controls src="[YOUR_GITHUB_REPO_URL]/english_audio.mp3">
                     Your browser does not support the audio element.
                 </audio>
             </section>
@@ -108,29 +106,62 @@
                 <h2>The Legacy of the Conflict</h2>
                 <p>The Second Korean Conflict ended in a victory for the ROK-U.S. Alliance. North Korea's unconventional warfare strategy failed, and the Republic of Korea dramatically enhanced its self-defense capabilities through the ordeal. This "Forgotten War" leaves an important historical lesson: victory can be achieved not just through overwhelming firepower, but through sophisticated strategy, alliance solidarity, and the collective will of a nation to defend itself.</p>
             </section>
-
-            <footer class="footer">
-                <p>Source Material: Leavenworth Papers No. 19, "Scenes from an Unfinished War: Low-Intensity Conflict in Korea, 1966-1969" by Major Daniel P. Bolger.</p>
-            </footer>
         </div>
+
+        <section class="document-section">
+            <h2 id="document-title">원본 문서</h2>
+            <p id="document-desc">이 웹사이트의 바탕이 된 미 육군 레번워스 보고서 원본을 보실 수 있습니다.</p>
+            <!-- PDF 파일 경로를 실제 GitHub 경로로 수정해야 합니다 -->
+            <a href="[YOUR_GITHUB_REPO_URL]/leavenworth_paper_19.pdf" target="_blank" class="document-link" id="document-link-text">보고서 다운로드</a>
+        </section>
+
+        <footer class="footer">
+            <p>자료 출처: Leavenworth Papers No. 19, "Scenes from an Unfinished War: Low-Intensity Conflict in Korea, 1966-1969" by Major Daniel P. Bolger.</p>
+        </footer>
     </div>
 
     <script>
-        // Simple JavaScript for language switching
         function switchLang(lang) {
+            const koContent = document.getElementById('ko-content');
+            const enContent = document.getElementById('en-content');
+            const docTitle = document.getElementById('document-title');
+            const docDesc = document.getElementById('document-desc');
+            const docLinkText = document.getElementById('document-link-text');
+
+            // 모든 오디오 정지
+            document.querySelectorAll('audio').forEach(audio => audio.pause());
+
             if (lang === 'ko') {
-                document.getElementById('ko-content').classList.remove('hidden');
-                document.getElementById('en-content').classList.add('hidden');
+                koContent.classList.remove('hidden');
+                enContent.classList.add('hidden');
                 document.documentElement.lang = 'ko';
+                document.title = '잊혀진 전쟁: 1966-1969년 한국의 저강도 분쟁';
+                docTitle.textContent = '원본 문서';
+                docDesc.textContent = '이 웹사이트의 바탕이 된 미 육군 레번워스 보고서 원본을 보실 수 있습니다.';
+                docLinkText.textContent = '보고서 다운로드';
             } else {
-                document.getElementById('en-content').classList.remove('hidden');
-                document.getElementById('ko-content').classList.add('hidden');
+                enContent.classList.remove('hidden');
+                koContent.classList.add('hidden');
                 document.documentElement.lang = 'en';
+                document.title = 'The Forgotten War: Low-Intensity Conflict in Korea, 1966-1969';
+                docTitle.textContent = 'Original Document';
+                docDesc.textContent = 'You can view the original U.S. Army Leavenworth Paper that forms the basis of this website.';
+                docLinkText.textContent = 'Download Report';
             }
-            // Pause both audio players when switching
-            document.getElementById('ko-audio-player').pause();
-            document.getElementById('en-audio-player').pause();
+
+            // 언어 전환 버튼 활성화 상태 업데이트
+            document.querySelectorAll('.lang-switcher button').forEach(button => button.classList.remove('active'));
+            if (lang === 'ko') {
+                document.getElementById('ko-btn').classList.add('active');
+                document.getElementById('ko-btn-en').classList.remove('active');
+            } else {
+                document.getElementById('en-btn').classList.remove('active');
+                document.getElementById('en-btn-en').classList.add('active');
+            }
         }
+
+        // 초기 페이지 로드 시 기본 언어 설정
+        switchLang('ko');
     </script>
 
 </body>
